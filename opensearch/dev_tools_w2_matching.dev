@@ -33,3 +33,15 @@ GET bbuy_products/_search
   },
   "_source": "name"
 }
+
+GET /suggesters_index/_search
+{
+  "suggest": {
+    "completion_suggest":{
+      "prefix": "remo",
+      "completion":{
+        "field":"completion"
+      }
+    }
+  }
+}
