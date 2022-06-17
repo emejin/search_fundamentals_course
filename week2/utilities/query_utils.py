@@ -164,9 +164,9 @@ def add_spelling_suggestions(query_obj, user_query):
         "text": user_query,
         "phrase_suggest": {
             "phrase":{
-                "field":"suggest.trigrams",
+                "field":"suggest.trigram",
                 "direct_generator": [ {
-                    "field": "title.trigrams",
+                    "field": "suggest.trigram",
                     "min_word_length": 2,
                     "suggest_mode": "popular"
                 } ],
@@ -185,6 +185,8 @@ def add_spelling_suggestions(query_obj, user_query):
 
         }
     }
+
+    return query_obj
 
 
 # Given the user query from the UI, the query object we've built so far and a Pandas data GroupBy data frame,
